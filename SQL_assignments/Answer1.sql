@@ -1,0 +1,9 @@
+USE ineuron;
+
+### Get the IDs of the ones that have all the three skills SQL, POWERBI, PYTHON
+
+SELECT ID AS COUNT FROM 
+(SELECT DISTINCT * FROM TECHNOLOGY
+WHERE TECHNOLOGY IN ('SQL', 'POWERBI', 'PYTHON')) A
+GROUP BY ID 
+HAVING COUNT(*) = 3;
